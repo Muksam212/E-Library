@@ -1,0 +1,30 @@
+{% extends 'Base/Header.html' %}
+{% block content %}
+<form method = "POST">
+	{% csrf_token %}
+	<input type="text" name="first_name" placeholder="First Name"><br>
+	<input type="text" name="last_name" placeholder="Last Name"><br>
+
+	<input type="text" name="username" placeholder="User Name"><br>
+
+	<input type="text" name="email" placeholder="Enter Your Email.."><br>
+
+	<!-- Making choose option for author and reader-->
+	<p>Choose author type:</p>
+	<div class="input-field col 14">
+		<select name="user_type" style="display: block;">
+			<option disabled=""> Choose </option>
+			<option>Reader</option>
+			<option>Author</option>
+		</select>
+	</div><br>
+
+	<input type="password" name="password1" placeholder="Enter your Password.."><br>
+
+	<input type="password" name="password2"
+	placeholder="Enter your password Again.."><br>
+
+	<input type="submit" name="Register" class="btn">
+</form>
+<h3>Already have an account? <a href="Accounts/login.html">Sign In</a></h3>
+{% endblock content %}
